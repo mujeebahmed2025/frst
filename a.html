@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    
+    <!-- Favicon (icon in browser tab) -->
+    <link rel="icon" href="C:\Users\hello\Desktop" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #0000ff;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Webpage</h1>
+        <!-- Display image -->
+        <img src="/img/download.png" alt="Sample Image">
+    </header>
+
+    <!-- Form section -->
+    <form action="/submit" method="POST">
+        <h2>Contact Us</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <input type="submit" value="Send">
+    </form>
+
+    <!-- Links section -->
+    <nav>
+        <h3>Quick Links</h3>
+        <a href="https://www.google.com" target="_blank">Google</a>
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+        <a href="https://www.github.com" target="_blank">GitHub</a>
+    </nav>
+
+</body>
+</html>
