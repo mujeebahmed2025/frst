@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Style Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .excel-table-container {
+            max-width: 100%;
+            overflow: auto;
+            border: 1px solid #ccc;
+        }
+
+        table.excel-table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+        }
+
+        table.excel-table th, table.excel-table td {
+            border: 1px solid #c0c0c0;
+            padding: 8px 12px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        table.excel-table th {
+            background-color: #f3f3f3;
+            font-weight: bold;
+        }
+
+        table.excel-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table.excel-table tr:hover {
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Microsoft Excel Style Table</h2>
+
+<div class="excel-table-container">
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>28</td>
+                <td>Sales</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>Smith</td>
+                <td>34</td>
+                <td>Marketing</td>
+                <td>Los Angeles</td>
+            </tr>
+            <tr>
+                <td>Michael</td>
+                <td>Brown</td>
+                <td>41</td>
+                <td>HR</td>
+                <td>Chicago</td>
+            </tr>
+            <tr>
+                <td>Emily</td>
+                <td>Davis</td>
+                <td>29</td>
+                <td>IT</td>
+                <td>Seattle</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AK's Portfolio</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    font-famiy : ('Cooper', sans-serif);
+    
+    fancy-text{ font_family, Cooper , serif;
+  font-style:italic
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5em;
+    }
+
+    .hero {
+      padding: 4em 2em;
+      text-align: center;
+      background: linear-gradient(135deg, #4A90E2, #007AFF);
+      color: white;
+    }
+
+    .section {
+      padding: 3em 2em;
+    }
+
+    .portfolio-items {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .portfolio-card {
+      background: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .portfolio-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* === Modal === */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: red;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 0.5em 0.7em;
+      cursor: pointer;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input, textarea {
+      padding: 0.75em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.75em;
+      background: #007AFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005bb5;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ahmed's Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Hello, I'm ahmed</h2>
+    <p>Engineer • Developer • Problem Solver</p>
+  </section>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p class='fancy-text'><i>I am a passionate engineer with a focus on creating elegant and efficient software solutions. I love turning ideas into functional code.</i></p>
+  </section>
+  <section id="portfolio" class="section">
+    <h2>My Projects</h2>
+    <div class="portfolio-items">
+      <div class="portfolio-card" onclick="openModal('Project 1')"><a href="forms.html"> Project 1</a> </div>
+      <div class="portfolio-card" onclick="openModal('Project 2')"><a href="new.html     ">Project 2</a></div>
+      <div class="portfolio-card" onclick="openModal('Project 3')"><a href="a.html" > Project 3</a></div>
+    </div>
+  </section>
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">X</button>
+      <h3 id="modalTitle">Project Title</h3>
+      <p>This is a description of the selected project. It includes challenges, tools used, and outcomes.</p>
+    </div>
+  </div>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    function openModal(projectName) {
+      document.getElementById('projectModal').style.display = 'flex';
+      document.getElementById('modalTitle').textContent = projectName;
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (!name || !email || !message) {
+        alert("All fields are required!");
+        return false;
+      }
+      alert("Message sent successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>

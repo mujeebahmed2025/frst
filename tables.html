@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables </title></head>
+<body>
+<table>
+  <td> {
+  border: 0.2em tomato solid;
+}
+.tableStyle {
+  /* class selector */
+  font-size: small;
+}
+
+#table1 {
+  /* id selector */
+  color: white;
+  background-color: black;
+}
+
+table {
+  color: green;
+}
+
+table {
+  color: red;
+}
+
+.sectionClass p {
+  /* descendant combinator*/
+  color: red;
+}
+
+.sectionClass > p {
+  /* childcombinator*/
+  text-decoration-line: overline;
+}
+
+/* psuedo selectors */
+tr:nth-child(odd) {
+  background-color: gray;
+}
+
+tr:nth-child(even) {
+  background-color: lightskyblue;
+}
+
+tr:nth-child(1) {
+  background-color: cadetblue;
+}
+
+table:focus-within tbody 
+tr:not(:focus-within) {
+    filter: blur(4px) saturate(0.2) opacity(0.1);
+  }
+</td>
+ </table>
+ </body>
+  </html>
