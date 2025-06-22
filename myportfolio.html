@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ak Portfolio</title>
+    <link rel="icon" href="img/mujeeb.jpg"/>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+section {
+  padding: 20px;
+  background: white;
+  margin: 10px;
+}
+
+    summary {
+      cursor: pointer;
+    }
+{
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .darkMode {
+      background-color: black;
+      color: white;
+    }
+
+    .toggle-container {
+      margin: 3px;
+    }
+     body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 500px;
+      color: rgba(0, 0, 0, 0.1); 
+      
+      pointer-events: none;     
+      z-index: 0;
+      user-select: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label>
+      <input type="checkbox" onchange="setDarkMode(this)">
+      Enable Dark Mode
+    </label>
+  </div>
+  <script>
+    function setDarkMode(element) {
+      if (element.checked) {
+        document.body.className = "darkMode";
+      } else {
+        document.body.className = "";
+      }
+    }
+  </script>
+  <div class="watermark">Ahmed</div>
+    <header>
+    <h1>👨‍💻 Ahmed's Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+ <section class id="marquee">
+      <marquee behavior="scroll" direction="left"><h1> welcome to my Portfolio❣️!</h1></marquee>
+    </section>
+  <main>
+    <article id="about">
+      <h2>About Me</h2>
+      <figure>
+        <img src="img/mujeeb.jpg" alt="Ahmed's profile picture" height="150" width="150" />
+      </figure>
+      <p>Engineer with a passion for <em>innovation</em> and <abbr title="Artificial Intelligence">AI</abbr><br>
+ <b><u>MY info 👳</u></b><br>       
+<b><u>Name:</u></b> [mohammed mujeeb ahmed]<br>
+<b><u>Email:</u></b> [yourname@email.com]<br>
+<b><u>Phone:</u></b> [7619259806]<br>
+<b><u>Location:</u></b> [ramanagara, karnataka, india]<br>
+
+<u><b>🎓 Education</b></u>
+12th Grade (Science Stream)<br>
+[shaheen pu collge, [bidar]<br>
+Completed in [2024]<br>
+
+<ul>💻 Skills</ul>
+<li>HTML : Good understanding of structure and semantic tags</li>
+
+<li>CSS :Styling pages, layouts, colors, fonts</li>
+
+<li>JavaScript : Basic interactivity, DOM manipulation</li>
+
+<li>Responsive Design : Making websites mobile-friendly</li>
+
+<li>Learning Tools : VS Code,  GitHub (basic)</li>
+
+<ol>🌐 Projects</ol>
+<li> Personal Portfolio Website<br>
+A simple webpage to showcase my skills, built with HTML, CSS, and JavaScript.</li>
+<a href="myportfolio1.html">project 1</a>
+
+<li> Responsive Landing Page<br>
+A homepage design that works well on mobile and desktop.</li>
+
+<ul>🚀 Goals</ul>
+<li>Improve JavaScript for dynamic websites</li>
+<li>Learn React or a front-end framework</li>
+<li>Build more projects to improve my portfolio</li>.
+
+.</p>
+      <address>
+        📍 Earth<br />
+        🌐 <a href="mailto:ak@example.com">my address</a>
+      </address>
+      <time datetime="2025-0-01">Started in 2025</time>
+    </article>
+
+    <section id="projects"  >
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="myportfolio.html">project1</a></li>
+        <li><a href="forms.html">project2</a></li>
+        <li><a href="my.html">project3</a></li>
+      </ul>
+
+      <details>
+        <summary>See more projects</summary>
+        <dl>
+          <dt>ai genretor</dt>
+          <dd>chatgpt genretor</dd>
+        </dl>
+      </details>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="/submit" method="POST">
+        <fieldset>
+          <legend>Get in touch</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" /><br />
+
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="4" cols="40"></textarea><br />
+
+          <input type="checkbox" id="subscribe" name="subscribe" />
+          <label for="subscribe">Subscribe to newsletter</label><br />
+
+          <input type="radio" id="feedback" name="reason" value="feedback" />
+          <label for="feedback">Feedback</label>
+          <input type="radio" id="job" name="reason" value="job" />
+          <label for="job">Job Inquiry</label><br />
+
+          <label for="file">Upload Resume:</label>
+          <input type="file" id="file" name="file" /><br />
+
+          <button type="submit">Send</button>
+          <input type="reset" value="Reset" />
+        </fieldset>
+      </form>
+    </section>
+   
+    <section>
+      <h2>Multimedia</h2>
+      <video width="320" controls>
+        <source src="video record/b7c6ba3d-6bdf-40c0-adb1-8fbe68c77c54.mp4" type="video/mp4" />
+      </video><br>
+      <audio controls>
+        <source src="audio book/0959f626-932b-495b-a893-5e7a8705bac9 (1).mp3" type="audio/mp3" />
+      </audio><br>
+      <object data="doc/22979f04-4d2d-4a3f-8c69-0f352e6ce5b5.pdf" type="gretting/pdf" width="300" height="200">
+        <embed src="doc/22979f04-4d2d-4a3f-8c69-0f352e6ce5b5.pdf  " type="gretting/pdf"/>
+      </object>
+    </section>
+
+    <section>
+      <script>
+        document.write("<output>Dynamic content loaded ✔️</output>");
+      </script>
+    </section>
+
+  
+  </main>
+  <footer>
+    <hr />
+    <p>&copy; <time datetime="2025">2025</time> Ahmed. All rights reserved.</p>
+    <noscript>Enable JavaScript for full functionality.</noscript>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+

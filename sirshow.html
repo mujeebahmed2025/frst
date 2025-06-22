@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body {
+        padding: 2px;
+      }
+      span,
+      button,
+      section {
+        font-weight: bolder;
+        font-size: 50pt;
+        margin: 0 1em;
+      }
+      section,
+      input[type="number"] {
+        font-size: large;
+        margin: 10px;
+      }
+      .counting {
+        display: inline-block;
+        width: 10px;
+      }
+      summary {
+        border: 1px solid coral;
+        border-radius: 10px;
+        background-color: skyblue;
+        cursor: pointer;
+      }
+      details {
+        border: 1px solid coral;
+        border-raxx dius: 10px;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+      details:not(:open) {
+        padding-bottom: initial;
+        border: 1px solid black;
+
+      }
+      .resetButton {
+        font-size: initial;
+      }
+      .darkMode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script id="darkModeScript">
+      function setDarkMode(element) {
+        if (element.checked) {
+          document.getElementsByTagName("body")[0].className = "darkMode";
+        } else {
+          document.getElementsByTagName("body")[0].className = "";
+        }
+      }
+    </script>
+    <script id="inlineDemo">
+      let counterInline = 0;
+      let counterLimitInline = 10;
+    </script>
+    <script id="functionsDemo">
+      let counterFunctions = 0;
+      let counterLimitFunctions = 10;
+      function decrement() {
+        counterFunctions--;
+        if (counterFunctions < 0) {
+          counterFunctions = 0;
+        }
+        document.getElementById("counterElementFunctions").innerText =
+          counterFunctions;
+      }
+
+      function increment() {
+        counterFunctions++;
+        if (counterFunctions > counterLimitFunctions) {
+          counterFunctions = counterLimitFunctions;
+        }
+        document.getElementById("counterElementFunctions").innerText =
+          counterFunctions;
+      }
+
+      const resetFunctionVariable = function () {
+        counterFunctions = 0;
+        document.getElementById("counterElementFunctions").innerText = 0;
+      };
+
+      const setLimitArrowFunction = (t) => {
+        counterLimitFunctions = t.value;
+        counterFunctions = 0;
+        document.getElementById("counterElementFunctions").innerText = 0;
+      };
+      
+    </script>
+  </head>
+  <body>
+    
+    <details open="open">
+      <summary>Counter - Inline script</summary>
+      <section>
+        <label for="inlineLimit">Limit</label>
+        <input
+          type="number"
+          name="inlineLimit"
+          id="inlineLimit"
+          step="1"
+          min="1"
+          max="1000"
+          value="10"
+          onchange="counterLimitInline = this.value; counterInline = 0;  document.getElementById('counterElementInline').innerText = 0;"
+        />
+        <button
+          class="resetButton"
+          onclick="counterInline = 0;  document.getElementById('counterElementInline').innerText = 0;"
+        >
+          Reset Count
+        </button>
+      </section>
+      <button
+        onclick="counterInline--; if (counterInline < 0) {counterInline = 0;}  document.getElementById('counterElementInline').innerText = counterInline;"
+      >
+        -
+      </button>
+      <span id="counterElementInline" class="counting">0</span>
+      <button
+        onclick="counterInline++;  if (counterInline > counterLimitInline) {counterInline = counterLimitInline;} document.getElementById('counterElementInline').innerText = counterInline;"
+      >
+        +
+      </button>
+    </details>
+    <hr />
+    <details open="open">
+      <section>
+        <label for="functionsLimit">Limit</label>
+        <input
+          type="number"
+          name="functionsLimit"
+          id="functionsLimit"
+          step="1"
+          min="1"
+          max="1000"
+          value="10"
+          onchange="setLimitArrowFunction(this);"
+        />
+        <button class="resetButton" onclick="resetFunctionVariable();">
+          Reset Count
+        </button>
+      </section>
+      <summary>Counter - Functions</summary>
+      <button onclick="decrement();">-</button>
+      <span id="counterElementFunctions" class="counting">0</span>
+      <button onclick="increment();">+</button>
+    </details>
+  </body>
+</html>
